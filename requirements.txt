@@ -1,0 +1,7 @@
+tensorflow>=2.15
+numpy
+opencv-python
+matplotlib
+pandas
+scikit-learn
+seaborn
