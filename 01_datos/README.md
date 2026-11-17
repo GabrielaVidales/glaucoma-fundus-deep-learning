@@ -1,9 +1,20 @@
-# 01 · Datos
+# 01 · Data
 
-Etapa de descarga y preparación de las imágenes. Ejecutar en este orden:
+Download and preparation of the fundus images. Run in this order:
 
-1. **`01_descarga_dataset_kaggle.ipynb`** — Descarga el dataset público de Kaggle (fotos de fondo de ojo: normal / glaucoma) y lo copia a Google Drive.
-2. **`02_creacion_muestra_reducida.ipynb`** — Crea una muestra más pequeña del dataset, útil para probar el pipeline completo rápidamente antes de correr con todos los datos.
-3. **`03_generacion_matrices_X_y.ipynb`** — Convierte las imágenes en matrices numéricas (`X`) con sus etiquetas (`y`: 0 = normal, 1 = glaucoma) y las guarda como archivos `.npy`, listos para alimentar cualquier modelo de las carpetas siguientes.
+| Notebook | What it does |
+|---|---|
+| `01_descarga_dataset_kaggle.ipynb` | Downloads the public *Fundus images dataset for Glaucoma* (Poveda, 2024) from Kaggle and copies it to Google Drive. |
+| `02_creacion_muestra_reducida.ipynb` | Builds smaller class-balanced subsets (2,000 and 5,000 training images) to test the full pipeline quickly before using all the data. |
+| `03_generacion_matrices_X_y.ipynb` | Reads each image with OpenCV, converts BGR→RGB, resizes it to 220 × 220 px, and saves `X` (images) and `y` (0 = normal, 1 = glaucoma) as `.npy` arrays for every split. |
 
-El código incluye comentarios explicando cada operación (lectura de imágenes, redimensionado, conversión de color, etc.).
+Output folders (created in Google Drive, not included in this repository):
+
+```
+data_2000train_200val_240test/
+data_5000train_500val_240test/
+data_Alltrain_Allval_240test/
+    train/  X_train.npy  y_train.npy
+    val/    X_val.npy    y_val.npy
+    test/   X_test.npy   y_test.npy   ← same 480 balanced images in every configuration
+```
