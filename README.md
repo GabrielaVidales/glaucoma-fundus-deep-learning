@@ -161,8 +161,8 @@ Each folder has its own `README.md`. Folder and notebook names, and code comment
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/GabrielaVidales/deteccion-glaucoma-fondo-ojo.git
-   cd deteccion-glaucoma-fondo-ojo
+   git clone https://github.com/GabrielaVidales/glaucoma-fundus-deep-learning.git
+   cd glaucoma-fundus-deep-learning
    pip install -r requirements.txt
    ```
 2. The notebooks were written for **Google Colab** and mount Google Drive. Update the project path in the first cells (`os.chdir(...)`) to your own Drive folder.
